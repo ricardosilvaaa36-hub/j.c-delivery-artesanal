@@ -48,7 +48,7 @@ export function ProductSheet() {
       name: p.name,
       basePrice: base,
       variant: p.variants?.find((v) => v.id === variant)?.name,
-      extras: (p.extras ?? []).filter((e) => extras[e.id]).map((e) => ({ ...e, qty: extras[e.id] })),
+      extras: (p.extras ?? []).filter((e) => extras[e.id]).map((e) => ({ ...e, qty: extras[e.id] ?? 0 })),
       note,
       qty,
     });

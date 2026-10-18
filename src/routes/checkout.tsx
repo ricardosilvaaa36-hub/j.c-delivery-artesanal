@@ -3,7 +3,7 @@ import { useState, type ReactNode } from "react";
 import { Bike, Store } from "lucide-react";
 import { business, whatsappLink } from "@/config/business";
 import { useCart } from "@/lib/cart";
-import { buildOrderMessage, validateOrder, type OrderForm } from "@/lib/order";
+import { buildOrderMessage, validateOrder, type OrderErrors, type OrderForm } from "@/lib/order";
 import { CartLines, Totals } from "@/components/shop/CartDrawer";
 
 export const Route = createFileRoute("/checkout")({
@@ -20,7 +20,7 @@ export const Route = createFileRoute("/checkout")({
 
 const empty: OrderForm = { name: "", phone: "", type: "entrega", street: "", number: "", district: "", complement: "", payment: "", changeFor: "", notes: "" };
 
-function Field({ label, error, children, id }: { label: string; error?: string; children: ReactNode; id: string }) {
+function Field({ label, error, children, id }: { label: string; error?: string | undefined; children: ReactNode; id: string }) {
   return (
     <div>
       <label htmlFor={id} className="mb-1 block text-sm font-bold">{label}</label>
@@ -33,7 +33,7 @@ function Field({ label, error, children, id }: { label: string; error?: string; 
 function Checkout() {
   const items = useCart();
   const [f, setF] = useState<OrderForm>(empty);
-  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [errors, setErrors] = useState<OrderErrors>({});
   const [sent, setSent] = useState(false);
   const up = (k: keyof OrderForm) => (e: { target: { value: string } }) => setF((s) => ({ ...s, [k]: e.target.value }));
   const input = (k: keyof OrderForm, extra: Record<string, unknown> = {}) => (
@@ -55,7 +55,7 @@ function Checkout() {
     const e = validateOrder(f);
     setErrors(e);
     if (Object.keys(e).length) {
-      document.getElementById(Object.keys(e)[0])?.focus();
+      document.getElementById(Object.keys(e)[0] ?? "")?.focus();
       return;
     }
     const url = whatsappLink(buildOrderMessage(items, f));

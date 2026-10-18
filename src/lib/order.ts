@@ -14,8 +14,9 @@ export type OrderForm = {
   notes: string;
 };
 
-export function validateOrder(f: OrderForm): Record<string, string> {
-  const e: Record<string, string> = {};
+export type OrderErrors = Partial<Record<keyof OrderForm, string>>;
+export function validateOrder(f: OrderForm): OrderErrors {
+  const e: OrderErrors = {};
   if (f.name.trim().length < 2) e.name = "Informe seu nome.";
   if (f.phone.replace(/\D/g, "").length < 10) e.phone = "Informe um telefone com DDD.";
   if (f.type === "entrega") {
