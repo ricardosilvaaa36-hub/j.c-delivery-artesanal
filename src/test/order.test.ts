@@ -24,6 +24,6 @@ describe("pedido", () => {
     expect(m).toContain("2x Ana Castela (Bacon)");
     expect(m).toContain("Obs: sem cebola");
     expect(m).toContain("Total: R$\u00a080,98");
-    expect(m).toContain("Troco para: R$ 100");
+    expect(m).toContain("Troco para:* R$ 100");
   });
 });

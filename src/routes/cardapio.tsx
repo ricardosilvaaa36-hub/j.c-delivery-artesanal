@@ -4,11 +4,11 @@ import { useMemo, useState } from "react";
 import { categories, products, type CategoryId } from "@/data/menu";
 import { ProductCard } from "@/components/shop/ProductCard";
 
-type S = { c?: CategoryId };
+type S = { c?: CategoryId | undefined };
 
 export const Route = createFileRoute("/cardapio")({
   validateSearch: (s: Record<string, unknown>): S => ({
-    c: categories.some((x) => x.id === s.c) ? (s.c as CategoryId) : undefined,
+    c: categories.some((x) => x.id === s["c"]) ? (s["c"] as CategoryId) : undefined,
   }),
   head: () => ({
     meta: [
