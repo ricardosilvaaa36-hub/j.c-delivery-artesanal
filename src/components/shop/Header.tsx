@@ -10,7 +10,7 @@ export function Header() {
   const { bump } = useUI();
   const count = itemCount(items);
   return (
-    <header className="sticky top-0 z-40 bg-primary text-primary-foreground shadow-soft">
+    <header className="glass sticky top-0 z-40 border-x-0 border-t-0 text-foreground shadow-soft">
       <div className="mx-auto flex max-w-5xl items-center gap-3 px-4 py-2.5">
         <button aria-label="Abrir menu" onClick={() => ui.set({ menu: true })} className="grid h-11 w-11 place-items-center rounded-full bg-brand-dark/25 transition hover:bg-brand-dark/40">
           <Menu className="h-6 w-6" />
