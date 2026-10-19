@@ -52,43 +52,48 @@
 
 :root {
   --radius: 1rem;
-  /* #F7F7F7 */
-  --background: oklch(0.975 0 0);
-  --foreground: oklch(0.22 0.03 150);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.22 0.03 150);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.22 0.03 150);
-  /* #00C66A */
-  --primary: oklch(0.72 0.19 152);
-  --primary-foreground: oklch(1 0 0);
-  /* #064D25 */
-  --brand-dark: oklch(0.38 0.09 150);
-  --brand-dark-foreground: oklch(1 0 0);
-  /* #FFD166 */
-  --gold: oklch(0.88 0.13 85);
-  --gold-foreground: oklch(0.25 0.05 70);
-  --secondary: oklch(0.95 0.03 152);
-  --secondary-foreground: oklch(0.38 0.09 150);
-  --muted: oklch(0.95 0 0);
-  --muted-foreground: oklch(0.48 0.02 150);
-  --accent: oklch(0.95 0.05 85);
-  --accent-foreground: oklch(0.3 0.06 70);
-  /* #E83D24 */
-  --destructive: oklch(0.61 0.21 33);
+  /* Dark "TV app" theme with J.C green + gold */
+  --background: oklch(0.17 0.03 160);
+  --foreground: oklch(0.97 0.01 150);
+  --card: oklch(0.23 0.035 160);
+  --card-foreground: oklch(0.97 0.01 150);
+  --popover: oklch(0.21 0.035 160);
+  --popover-foreground: oklch(0.97 0.01 150);
+  --primary: oklch(0.74 0.19 152);
+  --primary-foreground: oklch(0.15 0.04 155);
+  --brand-dark: oklch(0.13 0.03 160);
+  --brand-dark-foreground: oklch(0.97 0.01 150);
+  --gold: oklch(0.87 0.16 90);
+  --gold-foreground: oklch(0.2 0.05 70);
+  --secondary: oklch(0.3 0.06 155);
+  --secondary-foreground: oklch(0.95 0.02 150);
+  --muted: oklch(0.28 0.03 160);
+  --muted-foreground: oklch(0.75 0.03 150);
+  --accent: oklch(0.32 0.06 120);
+  --accent-foreground: oklch(0.95 0.05 90);
+  --destructive: oklch(0.63 0.21 30);
   --destructive-foreground: oklch(1 0 0);
   --whatsapp: oklch(0.72 0.17 150);
-  --border: oklch(0.91 0.01 150);
-  --input: oklch(0.89 0.01 150);
-  --ring: oklch(0.72 0.19 152);
-  --sidebar: oklch(1 0 0);
-  --sidebar-foreground: oklch(0.22 0.03 150);
-  --sidebar-primary: oklch(0.72 0.19 152);
-  --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: oklch(0.95 0.03 152);
-  --sidebar-accent-foreground: oklch(0.38 0.09 150);
-  --sidebar-border: oklch(0.91 0.01 150);
-  --sidebar-ring: oklch(0.72 0.19 152);
+  --border: oklch(1 0 0 / 0.1);
+  --input: oklch(1 0 0 / 0.15);
+  --ring: oklch(0.87 0.16 90);
+  --sidebar: oklch(0.19 0.03 160);
+  --sidebar-foreground: oklch(0.97 0.01 150);
+  --sidebar-primary: oklch(0.74 0.19 152);
+  --sidebar-primary-foreground: oklch(0.15 0.04 155);
+  --sidebar-accent: oklch(0.3 0.06 155);
+  --sidebar-accent-foreground: oklch(0.95 0.02 150);
+  --sidebar-border: oklch(1 0 0 / 0.1);
+  --sidebar-ring: oklch(0.87 0.16 90);
+}
+body {
+  background-image: radial-gradient(circle at 15% 0%, oklch(0.35 0.1 152 / 0.45), transparent 45%), radial-gradient(circle at 90% 30%, oklch(0.5 0.12 90 / 0.15), transparent 40%);
+  background-attachment: fixed;
+}
+@utility glass {
+  background: oklch(1 0 0 / 0.06);
+  backdrop-filter: blur(18px);
+  border: 1px solid oklch(1 0 0 / 0.1);
 }
 
 @layer base {

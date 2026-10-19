@@ -64,7 +64,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
-      { name: "theme-color", content: "#00C66A" },
+      { name: "theme-color", content: "#0F1F17" },
       { title: "J.C Hamburgueria — Delivery em Aparecida do Taboado" },
       { name: "description", content: "Hambúrgueres artesanais, combos, hot-dogs e porções. Peça pelo WhatsApp." },
       { property: "og:type", content: "website" },
