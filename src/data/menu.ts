@@ -15,11 +15,25 @@ import p88 from "@/assets/p88.jpg.asset.json";
 import p90 from "@/assets/p90.jpg.asset.json";
 import p91 from "@/assets/p91.jpg.asset.json";
 import p92 from "@/assets/p92.jpg.asset.json";
+import agua from "@/assets/foodzap-agua.png.asset.json";
+import aguaGas from "@/assets/foodzap-agua-gas.png.asset.json";
+import coca2l from "@/assets/foodzap-coca-2l.png.asset.json";
+import coca1l from "@/assets/foodzap-coca-1l.png.asset.json";
+import coca600 from "@/assets/foodzap-coca-600.png.asset.json";
+import cocaLata from "@/assets/foodzap-coca-lata.png.asset.json";
+import guarana2l from "@/assets/foodzap-guarana-2l.png.asset.json";
+import guarana1l from "@/assets/foodzap-guarana-1l.png.asset.json";
+import guaranaLata from "@/assets/foodzap-guarana-lata.png.asset.json";
+import pepsiZero from "@/assets/foodzap-pepsi-zero.png.asset.json";
+import fanta2l from "@/assets/foodzap-fanta-2l.png.asset.json";
+import fantaLata from "@/assets/foodzap-fanta-lata.png.asset.json";
 
 /**
  * Cardápio centralizado. Para editar: altere nome, descrição, preço,
  * imagem, categoria, disponibilidade (available) ou adicionais.
- * Dados retirados do cardápio digital e dos materiais da J.C Hamburgueria.
+ * Preços e adicionais conferidos em https://jchamburgueria.foodzap.com.br/
+ * em 23/10/2026. Fotos de bebidas: Foodzap; demais fotos e combos: materiais
+ * enviados pela J.C. Os combos não constam no Foodzap e foram preservados.
  */
 export type CategoryId = "hamburgueres" | "especiais" | "combos" | "hotdogs" | "porcoes" | "bebidas" | "adicionais";
 
@@ -55,6 +69,10 @@ export const burgerExtras: Extra[] = [
   { id: "calabresa", name: "Calabresa", price: 6 },
   { id: "doritos", name: "Doritos", price: 7 },
   { id: "queijo", name: "Queijo", price: 6 },
+  { id: "cheddar", name: "Cheddar", price: 6 },
+  { id: "catupiry", name: "Catupiry", price: 7 },
+  { id: "hamburguer-350g", name: "Hamburguer 350g", price: 15 },
+  { id: "hamburguer-150g", name: "Hamburguer 150g", price: 10 },
 ];
 
 const B = "Pão de brioche, hambúrguer de costela assado";
@@ -75,6 +93,7 @@ export const products: Product[] = [
   burger({ id: "roberto-carlos", name: "Roberto Carlos (Doritos + cheddar)", price: 31.99, category: "hamburgueres", image: p92.url, description: `${B}, queijo muçarela, doritos, queijo cheddar, ${S}.` }),
   burger({ id: "sergio-reis", name: "Sérgio Reis (Chicken bacon jr)", price: 30.99, category: "hamburgueres", image: p76.url, description: `Pão de brioche, bacon defumado, queijo, ${S}.` }),
   burger({ id: "tim-maia", name: "Tim Maia (Chicken bacon jr + cheddar)", price: 31.99, category: "hamburgueres", image: p75.url, description: `Pão de brioche, filé de peito de frango empanado e frito, bacon defumado, queijo muçarela, queijo cheddar, ${S}.` }),
+  burger({ id: "djavan", name: "Djavan (Chiken bacon jr triplo queijo)", price: 31.99, category: "hamburgueres", description: `Pão de brioche, bacon defumado, triplo de queijo muçarela, queijo cheddar, ${S}.` }),
   burger({ id: "vini-jr", name: "Vini Jr (Kids)", price: 19.99, category: "hamburgueres", description: `${B} e queijo.` }),
 
   // Pão especial
@@ -111,19 +130,19 @@ export const products: Product[] = [
 
   // Bebidas
   ...([
-    ["agua", "Água natural", "", 3.5],
-    ["agua-gas", "Água com gás", "", 4],
-    ["coca-2l", "Coca-Cola | 2L", "2 litros", 15],
-    ["coca-1l", "Coca-Cola | 1L", "1 litro", 10],
-    ["coca-600", "Coca-Cola | 600ml", "600ml", 8],
-    ["coca-lata", "Coca-Cola | Lata", "350ml", 6],
-    ["guarana-2l", "Guaraná Antarctica | 2L", "2 litros", 12],
-    ["guarana-1l", "Guaraná Antarctica | 1L", "1 litro", 10],
-    ["guarana-lata", "Guaraná Antarctica | Lata", "350ml", 6],
-    ["pepsi-zero", "Pepsi Zero | Lata", "350ml", 6],
-    ["fanta-2l", "Fanta | 2L", "2 litros", 12],
-    ["fanta-lata", "Fanta | Lata", "350ml", 6],
-  ] as const).map(([id, name, description, price]) => ({ id, name, description, price, category: "bebidas" as const, available: true })),
+    ["agua", "Água natural", "", 3.5, agua.url],
+    ["agua-gas", "Água com gás", "", 4, aguaGas.url],
+    ["coca-2l", "Coca-Cola | 2L", "2 litros", 15, coca2l.url],
+    ["coca-1l", "Coca-Cola | 1L", "1 litro", 10, coca1l.url],
+    ["coca-600", "Coca-Cola | 600ml", "600ml", 8, coca600.url],
+    ["coca-lata", "Coca-Cola | Lata", "350ml", 6, cocaLata.url],
+    ["guarana-2l", "Guaraná Antarctica | 2L", "2 litros", 12, guarana2l.url],
+    ["guarana-1l", "Guaraná Antarctica | 1L", "1 litro", 10, guarana1l.url],
+    ["guarana-lata", "Guaraná Antarctica | Lata", "350ml", 6, guaranaLata.url],
+    ["pepsi-zero", "Pepsi Zero | Lata", "350ml", 6, pepsiZero.url],
+    ["fanta-2l", "Fanta | 2L", "2 litros", 12, fanta2l.url],
+    ["fanta-lata", "Fanta | Lata", "350ml", 6, fantaLata.url],
+  ] as const).map(([id, name, description, price, image]) => ({ id, name, description, price, image, category: "bebidas" as const, available: true })),
 
   // Adicionais avulsos
   ...burgerExtras.map((e) => ({ id: `extra-${e.id}`, name: `Adicional de ${e.name}`, description: "Adicional para incrementar seu lanche.", price: e.price, category: "adicionais" as const, available: true })),

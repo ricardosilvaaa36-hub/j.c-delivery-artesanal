@@ -16,6 +16,8 @@ export const Route = createFileRoute("/cardapio")({
       { name: "description", content: "Hambúrgueres, combos, hot-dogs, porções e bebidas da J.C Hamburgueria com preços." },
       { property: "og:title", content: "Cardápio — J.C Hamburgueria" },
       { property: "og:description", content: "Escolha seus favoritos e envie o pedido pelo WhatsApp." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Cardapio,

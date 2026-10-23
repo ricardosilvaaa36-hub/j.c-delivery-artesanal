@@ -14,6 +14,8 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Hambúrgueres artesanais em Aparecida do Taboado - MS. Monte seu pedido e envie pelo WhatsApp." },
       { property: "og:title", content: "J.C Hamburgueria — Delivery" },
       { property: "og:description", content: "Feito com carinho, servido com alegria! Peça pelo WhatsApp." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Index,
