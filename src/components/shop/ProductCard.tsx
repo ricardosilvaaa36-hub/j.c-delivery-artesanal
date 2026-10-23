@@ -5,7 +5,7 @@ import { ui } from "@/lib/ui-store";
 
 export function ProductImage({ p, className }: { p: Product; className?: string }) {
   return p.image ? (
-    <img src={p.image} alt={p.name} loading="lazy" className={`object-cover ${className ?? ""}`} />
+    <img src={p.image} alt={p.name} loading="lazy" className={`${p.category === "bebidas" ? "object-contain bg-card" : "object-cover"} ${className ?? ""}`} />
   ) : (
     <div className={`grid place-items-center bg-accent text-4xl ${className ?? ""}`} aria-hidden>{categoryIcon(p.category)}</div>
   );
@@ -18,7 +18,7 @@ export function ProductCard({ p }: { p: Product }) {
       <button onClick={open} className="flex min-w-0 flex-1 flex-col text-left" disabled={!p.available}>
         <h3 className="font-display text-base font-bold leading-tight">{p.name}</h3>
         <p className="mt-1 line-clamp-2 text-sm text-muted-foreground">{p.description}</p>
-        <p className="mt-auto pt-2 text-lg font-extrabold text-brand-dark">
+        <p className="mt-auto pt-2 text-lg font-extrabold text-gold">
           {p.variants ? <span className="text-xs font-semibold text-muted-foreground">a partir de </span> : null}
           {brl(p.price)}
         </p>
@@ -46,7 +46,7 @@ export function FeaturedCard({ p }: { p: Product }) {
       <div className="p-3">
         <p className="line-clamp-2 min-h-[2.5rem] font-display text-sm font-bold leading-tight">{p.name}</p>
         <div className="mt-2 flex items-center justify-between">
-          <span className="font-extrabold text-brand-dark">{brl(p.price)}</span>
+          <span className="font-extrabold text-gold">{brl(p.price)}</span>
           <span className="grid h-8 w-8 place-items-center rounded-full bg-primary text-primary-foreground"><Plus className="h-4 w-4" /></span>
         </div>
       </div>
