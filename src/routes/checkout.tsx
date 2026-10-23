@@ -13,6 +13,8 @@ export const Route = createFileRoute("/checkout")({
       { name: "description", content: "Informe seus dados e envie seu pedido pelo WhatsApp da J.C Hamburgueria." },
       { property: "og:title", content: "Finalizar pedido — J.C Hamburgueria" },
       { property: "og:description", content: "Checkout rápido com envio pelo WhatsApp." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Checkout,
