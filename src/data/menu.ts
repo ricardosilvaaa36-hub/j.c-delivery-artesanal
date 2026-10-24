@@ -126,7 +126,7 @@ export const products: Product[] = [
   { id: "batata-croc", name: "Batata Croc-Croc", price: 9, category: "porcoes", available: true, description: "Porção de batata chips." },
   { id: "onion-rings", name: "Onion Rings", price: 24.99, category: "porcoes", available: true, description: "Porção de anéis de cebola." },
   { id: "mini-coxinhas", name: "Mini Coxinhas", price: 27.99, category: "porcoes", available: true, description: "Porção de mini coxinhas." },
-  { id: "mini-churros", name: "Mini Churros", price: 16.99, category: "porcoes", available: true, description: "Porção de mini churros." },
+  { id: "mini-churros", name: "Mini Churros", price: 16.99, category: "porcoes", available: true, description: "Porção de mini churros." },{ id: "porcao-mista", name: "Porção Mista", price: 50, category: "porcoes", available: true, description: "Porção mista para compartilhar." },
 
   // Bebidas
   ...([
