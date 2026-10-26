@@ -5,7 +5,7 @@ import p77 from "@/assets/p77.jpg.asset.json";
 import p78 from "@/assets/p78.jpg.asset.json";
 import p79 from "@/assets/p79.jpg.asset.json";
 import p80 from "@/assets/p80.jpg.asset.json";
-import p81 from "@/assets/p81.jpg.asset.json";
+import batataFrita from "@/assets/batata-frita.jpg";
 import p83 from "@/assets/p83.jpg.asset.json";
 import p84 from "@/assets/p84.jpg.asset.json";
 import p85 from "@/assets/p85.jpg.asset.json";
@@ -122,7 +122,7 @@ export const products: Product[] = [
   { id: "neymar", name: "Neymar Jr. (Doritos)", price: 26.99, category: "hotdogs", available: true, extras: burgerExtras, description: "Pão de brioche, três salsichas, molho artesanal de tomate, maionese, mostarda, queijo e doritos." },
 
   // Porções
-  { id: "batata-frita", name: "Batata Frita", price: 15.99, category: "porcoes", image: p81.url, available: true, popular: true, description: "Porção de batata frita temperada com ervas finas.", variants: [{ id: "p", name: "Tamanho P", price: 15.99 }, { id: "g", name: "Tamanho G", price: 29.99 }] },
+  { id: "batata-frita", name: "Batata Frita", price: 15.99, category: "porcoes", image: image: batataFrita.url, available: true, popular: true, description: "Porção de batata frita temperada com ervas finas.", variants: [{ id: "p", name: "Tamanho P", price: 15.99 }, { id: "g", name: "Tamanho G", price: 29.99 }] },
   { id: "batata-croc", name: "Batata Croc-Croc", price: 9, category: "porcoes", available: true, description: "Porção de batata chips." },
   { id: "onion-rings", name: "Onion Rings", price: 24.99, category: "porcoes", available: true, description: "Porção de anéis de cebola." },
   { id: "mini-coxinhas", name: "Mini Coxinhas", price: 27.99, category: "porcoes", available: true, description: "Porção de mini coxinhas." },
